@@ -1,0 +1,22 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh15620\viewkind0
+}
+
+Question 1
+
+The third statement in Requirement 1 will be modified to:
+
+- If the tag was a start-tag, check if it ends with "/". If it does, it's a stand-alone tag and will not be pushed to the stack. Otherwise, push it onto the stack.
+
+
+After reading a "<", I check if the next character is "/" or an alphabet. If it's an alphabet, I read until ">", store it in potential, and push it to the stack.
+Requirement 1:
+
+1. Read input until a tag is detected (`<`). If the next character is a `/`, it's an end-tag; otherwise, it's a start-tag. Read the tag's identity.
+2. If it's a start-tag, check if it ends with `/`. If it does, it's a stand-alone tag and won't be pushed to the stack. Otherwise, push it onto the stack. If it's an end-tag, pop the stack and verify the identities match. If the stack is empty or doesn't match, the input is invalid.
+3. Continue processing until no more input. If the stack is empty at the end, the input is valid; otherwise, it's invalid.
+
+
